@@ -19,11 +19,12 @@ RUN npm run build --prod
 # Use a smaller image for production
 FROM nginx:1.21.0-alpine
 
-# Copy the build output to the nginx directory
-COPY --from=build /dist/crudtuto-Front /usr/share/nginx/html
+# Copy the build output from the build stage to the nginx directory
+COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
 
 # Expose port 80 for the container
 EXPOSE 80
 
 # Start nginx when the container starts
 CMD ["nginx", "-g", "daemon off;"]
+
