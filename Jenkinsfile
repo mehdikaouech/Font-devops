@@ -15,6 +15,11 @@ pipeline {
                 sh 'npm run build'
             }
         }
+  stage('Setup Xvfb') {
+            steps {
+                xvfb([xvfb(':-1 -ac -screen 0 1280x1024x24')])
+            }
+        }
         
         stage('Test') {
             steps {
