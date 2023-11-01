@@ -20,7 +20,7 @@ RUN npm run build --prod
 FROM nginx:1.21.0-alpine
 
 # Copy the build output to the nginx directory
-COPY --from=build /app/dist/crud-tuto-front /usr/share/nginx/html
+COPY --from=build /dist/crudtuto-Front /usr/share/nginx/html
 
 # Expose port 80 for the container
 EXPOSE 80
