@@ -15,17 +15,14 @@ pipeline {
                 sh 'npm run build'
             }
         }
-  stage('Setup Xvfb') {
-            steps {
-                xvfb([xvfb(':-1 -ac -screen 0 1280x1024x24')])
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                sh 'npm run test'
-            }
-        }
+stage('Setup Xvfb') {
+    steps {
+        xvfb(displayName: 'Xvfb', installationName: 'Xvfb', screen: '0 1280x1024x24', timeout: 60)
+  sh 'npm run test'
+    }
+}
+
+       
 
         stage('Build Docker Image') {
             steps {
