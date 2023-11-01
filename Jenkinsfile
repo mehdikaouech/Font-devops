@@ -16,20 +16,14 @@ pipeline {
             }
         }
 
-stage('Setup Xvfb') {
+stage('install') {
     steps {
-        script {
-            def xvfb = [:]  // Créez un dictionnaire pour les options Xvfb
-            xvfb['autoDisplayName'] = true  // Utilisez un nom d'affichage automatique
-            xvfb['screen'] = '0 1280x1024x24'  // Spécifiez la résolution
-            xvfb['timeout'] = 60  // Spécifiez un timeout
-
-            wrap([$class: 'Xvfb', xvfb: xvfb]) {
+        
                sh 'npm run test'
             }
         }
-    }
-}
+    
+
 
        
 
