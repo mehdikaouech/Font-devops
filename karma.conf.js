@@ -45,7 +45,9 @@ module.exports = function (config) {
       },
     },
     
-
+    browserDisconnectTolerance: 2, // maximum number of tries a browser will attempt in the case of a disconnection
+    browserNoActivityTimeout: 50000, // How long will Karma wait for a message from a browser before disconnecting from it (in ms).
+    // ...
     singleRun: false,
     restartOnFileChange: true
   });
