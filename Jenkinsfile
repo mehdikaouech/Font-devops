@@ -10,6 +10,11 @@ pipeline {
                 git credentialsId: 'GitHubCred', url: 'https://github.com/mehdikaouech/Font-devops.git'
             }
         }
+   stage('Setup Xvfb') {
+            steps {
+                sh 'Xvfb :99 -ac -screen 0 1280x1024x16 &'
+            }
+        }
 
         stage('Build') {
             steps {
