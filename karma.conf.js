@@ -42,7 +42,7 @@ module.exports = function (config) {
       Firefox: {
         base: 'Firefox',
         flags: ['--headless'], // Pour exécuter Firefox en mode headless (optionnel)
-      },
+      }
     },
 
     singleRun: false,
