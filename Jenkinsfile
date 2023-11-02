@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+ environment {
+        DISPLAY = ":99"  // Assurez-vous que DISPLAY est configuré pour utiliser Xvfb
+    }
     stages {
         stage('Git Checkout') {
             steps {
