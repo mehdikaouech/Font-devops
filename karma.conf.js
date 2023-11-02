@@ -37,13 +37,14 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Firefox'],
+    browsers: ['Chrome'],
     customLaunchers: {
-      Firefox: {
-        base: 'Firefox',
-        flags: ['--headless'], // Pour exécuter Firefox en mode headless (optionnel)
-      }
+      ChromeHeadless: {
+        base: 'Chrome',
+        flags: ['--headless'], // Pour exécuter Chrome en mode headless (optionnel)
+      },
     },
+    
 
     singleRun: false,
     restartOnFileChange: true
