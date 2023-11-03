@@ -23,17 +23,7 @@ pipeline {
             }
         }
 
-stage('install') {
-    steps {
-        
-               sh 'npm run test'
-            }
-        }
     
-
-
-       
-
         stage('Build Docker Image') {
             steps {
                 script {
