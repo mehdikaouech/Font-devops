@@ -4,7 +4,7 @@ pipeline {
        
     }
     stages {
-        stage('Git Checkout') {
+        stage('Git Checkout Front') {
             steps {
                 echo 'Pulling from Git...'
                 git credentialsId: 'GitHubCred', url: 'https://github.com/mehdikaouech/Font-devops.git'
