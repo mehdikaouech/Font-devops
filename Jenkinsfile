@@ -10,11 +10,11 @@ pipeline {
         }
     stage('Préparation de l'environnement') {
             steps {
-                sh '''
+                sh 
                 source ~/.bashrc  # Assurez-vous que NVM est activé
                 nvm use 14  # Sélectionnez la version de Node.js
                 npm install  # Installez les dépendances du projet
-                '''
+                
             }
         }
 
