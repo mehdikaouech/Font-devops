@@ -8,7 +8,15 @@ pipeline {
                 git credentialsId: 'GitHubCred', url: 'https://github.com/mehdikaouech/Font-devops.git'
             }
         }
-
+    stage('Préparation de l'environnement') {
+            steps {
+                sh '''
+                source ~/.bashrc  # Assurez-vous que NVM est activé
+                nvm use 14  # Sélectionnez la version de Node.js
+                npm install  # Installez les dépendances du projet
+                '''
+            }
+        }
 
         stage('Build') {
             steps {
