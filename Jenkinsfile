@@ -1,11 +1,7 @@
 pipeline {
     agent any
  environment {
-<<<<<<< HEAD
-       
-=======
-     
->>>>>>> cfc31ed7506152f0962da18b42b998aa876fad10
+
     }
     stages {
         stage('Git Checkout Front') {
@@ -18,7 +14,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'npm install'
+             
                 sh 'npm run build'
             }
         }
