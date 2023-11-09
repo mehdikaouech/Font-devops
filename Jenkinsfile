@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     buildNumber = currentBuild.number
-                    imageTag = "1.${buildNumber}"
+                    imageTag = "1.0.${buildNumber}"
                     withCredentials([usernamePassword(credentialsId: "DockerHubCredentials", usernameVariable: "DOCKERHUB_USERNAME", passwordVariable: "DOCKERHUB_PASSWORD")]) {
                         dockerImage = docker.build("mehdikaouech/jenkins-front:${imageTag}")
                     }
